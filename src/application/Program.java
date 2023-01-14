@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
-
 import entities.Livro;
 import entities.TipoPromocao;
 import entities.enums.TipoPromocaoEnum;
@@ -19,6 +18,7 @@ public class Program {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 		// inserindo dados da livraria
+		
 		Livro livro = new Livro("Malala, a menina que queria ir para a escola", "Adriana Carranca", 21.9,
 				TipoPromocaoEnum.valueOf("B"));
 		Livro livro1 = new Livro("A revolução dos bichos: Um conto de fadas", "George Orwell", 8.5,
@@ -31,6 +31,9 @@ public class Program {
 		Livro livro7 = new Livro("Extraordinário", "R.J Palacio", 35.9, TipoPromocaoEnum.valueOf("C"));
 
 		// inserindo dados da promocao
+		
+		
+		
 		TipoPromocao promocao = new TipoPromocao(sdf.format("2023/01/10"), sdf.format("2023/01/20"), livro);
 		TipoPromocao promocao1 = new TipoPromocao(sdf.format("2023/01/10"), sdf.format("2023/01/15"), livro1);
 		TipoPromocao promocao2 = new TipoPromocao(sdf.format("2023/01/10"), sdf.format("2023/01/20"), livro2);
@@ -39,6 +42,23 @@ public class Program {
 		TipoPromocao promocao5 = new TipoPromocao(sdf.format("2023/01/10"), sdf.format("2023/01/30"), livro5);
 		TipoPromocao promocao6 = new TipoPromocao(sdf.format("2023/01/10"), sdf.format("2023/01/15"), livro6);
 		TipoPromocao promocao7 = new TipoPromocao(sdf.format("2023/01/10"), sdf.format("2023/01/30"), livro7);
+		
+		List<TipoPromocao> list = new ArrayList<>();
+		list.add(promocao);
+		list.add(promocao1);
+		list.add(promocao2);
+		list.add(promocao3);
+		list.add(promocao4);
+		list.add(promocao5);
+		list.add(promocao6);
+		list.add(promocao7);
+		
+		
+
+		
+		for (int i = 0; i<list.size();i++) {
+			
+		}
 
 	}
 }

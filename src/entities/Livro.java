@@ -1,7 +1,5 @@
 package entities;
 
-import java.util.Date;
-
 import entities.enums.TipoPromocaoEnum;
 
 public class Livro {

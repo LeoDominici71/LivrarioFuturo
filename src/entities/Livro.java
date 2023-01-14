@@ -1,23 +1,20 @@
 package entities;
 
-import entities.enums.TipoPromocaoEnum;
 
 public class Livro {
 
 	private String nome;
 	private String autor;
 	private Double preco;
-	private TipoPromocaoEnum tipo;
 
 	public Livro() {
 
 	}
 
-	public Livro(String nome, String autor, Double preco, TipoPromocaoEnum tipo) {
+	public Livro(String nome, String autor, Double preco) {
 		this.nome = nome;
 		this.autor = autor;
 		this.preco = preco;
-		this.tipo = tipo;
 	}
 
 	public String getNome() {
@@ -44,17 +41,12 @@ public class Livro {
 		this.preco = preco;
 	}
 
-	public TipoPromocaoEnum getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(TipoPromocaoEnum tipo) {
-		this.tipo = tipo;
-	}
-
 	@Override
 	public String toString() {
-		return "Livro [nome=" + nome + ", autor=" + autor + ", preco=" + preco + ", tipo=" + tipo + "]";
+		return "Livro [nome=" + nome + ", autor=" + autor + ", preco=" + preco + "]";
 	}
-
+	
+	
+	
 }
+

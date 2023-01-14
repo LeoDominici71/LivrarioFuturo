@@ -39,15 +39,9 @@ public class TipoPromocao {
 		return livro;
 	}
 
-	
-
 	@Override
 	public String toString() {
 		return "TipoPromocao [inicio=" + inicio + ", fim=" + fim + ", livro=" + livro + "]";
 	}
-	
-	
-	
-}
 
-	
+}

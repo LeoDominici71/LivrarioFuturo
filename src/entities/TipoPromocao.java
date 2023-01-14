@@ -6,42 +6,48 @@ import java.util.List;
 
 public class TipoPromocao {
 
-	private Date inicio;
-	private Date fim;
-	private List<Livro> livro = new ArrayList<>();
+	private String inicio;
+	private String fim;
+	private Livro livro;
 
 	public TipoPromocao() {
 	}
 
-	public TipoPromocao(Date inicio, Date fim, List<Livro> livro) {
+	public TipoPromocao(String inicio, String fim, Livro livro) {
 		this.inicio = inicio;
 		this.fim = fim;
 		this.livro = livro;
 	}
 
-	public Date getinicio() {
+	public String getInicio() {
 		return inicio;
 	}
 
-	public void setinicio(Date inicio) {
+	public void setInicio(String inicio) {
 		this.inicio = inicio;
 	}
 
-	public Date getfim() {
+	public String getFim() {
 		return fim;
 	}
 
-	public void setfim(Date fim) {
+	public void setFim(String fim) {
 		this.fim = fim;
 	}
 
-	public List<Livro> getLivro() {
+	public Livro getLivro() {
 		return livro;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "TipoPromocao [Inicio=" + inicio + ", Fim=" + fim + ", livro=" + livro + "]";
+		return "TipoPromocao [inicio=" + inicio + ", fim=" + fim + ", livro=" + livro + "]";
 	}
-
+	
+	
+	
 }
+
+	

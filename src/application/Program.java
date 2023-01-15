@@ -1,5 +1,7 @@
 package application;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -7,12 +9,15 @@ import java.util.List;
 import entities.DetalhePromocao;
 import entities.Livro;
 import entities.enums.TipoPromocaoEnum;
+import excecoes.Excecoes;
 
 public class Program {
 
 	public static void main(String[] args) {
+		
 
 		// inserindo dados da livraria
+		try {
 
 		Livro livro = new Livro("Malala, a menina que queria ir para a escola", "Adriana Carranca", 21.9);
 		Livro livro1 = new Livro("A revolução dos bichos: Um conto de fadas", "George Orwell", 8.5);
@@ -37,12 +42,12 @@ public class Program {
 
 		for (DetalhePromocao detalhePromocao2 : list) {
 			System.out.println(detalhePromocao2);
-//			System.out.println(detalhePromocao2.desconto(null, livro7, 0));
 			System.out.println("===================================");
 		}
-		
-		System.out.println("");
-		
+		}
+		catch(NullPointerException e) {
+			System.out.println("A variavel nao pode ser nula");
+		}
 		
 
 	}

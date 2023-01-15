@@ -1,5 +1,6 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import entities.enums.TipoPromocaoEnum;
@@ -11,6 +12,8 @@ public class DetalhePromocao {
 	private Livro livro;
 	private TipoPromocaoEnum tipo;
 	private Double pctPromocao;
+	
+	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	public DetalhePromocao() {
 		// TODO Auto-generated constructor stub
@@ -70,17 +73,14 @@ public class DetalhePromocao {
 
 		if (tipoPromocao.valorTipoPromocao == 2) {
 
-			sum = livro.getPreco() * desconto;
-			System.out.println(sum);
+			sum = livro.getPreco() - livro.getPreco() * desconto;
 
 		}else if(tipoPromocao.valorTipoPromocao == 1){
-			sum = livro.getPreco() * desconto;
-			System.out.println(sum);
+			sum = livro.getPreco() - livro.getPreco() * desconto;
 
 			
 		}else if(tipoPromocao.valorTipoPromocao == 3) {
-			sum = livro.getPreco() * desconto;
-			System.out.println(sum);
+			sum = livro.getPreco() - livro.getPreco() * desconto;
 			
 		}
 
@@ -94,10 +94,10 @@ public class DetalhePromocao {
 		sb.append("Livro: " + livro.getNome());
 		sb.append("\nAutor: " + livro.getAutor());
 		sb.append("\nPreço original: " + livro.getPreco());
-		sb.append("\nPreço final: "+ desconto(tipo, livro, pctPromocao));
+		sb.append("\nPreço final: "+ desconto (tipo, livro, pctPromocao));
 		sb.append("\nPorcentagem Aplicada " + pctPromocao);
-		sb.append("\nData inicio: " + inicio);
-		sb.append("\nData fim: " + fim);
+		sb.append("\nData inicio: " + sdf.format(inicio));
+		sb.append("\nData fim: " + sdf.format(fim));
 
 		return sb.toString();
 	}

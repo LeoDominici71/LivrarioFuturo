@@ -9,7 +9,8 @@ import java.util.List;
 import entities.DetalhePromocao;
 import entities.Livro;
 import entities.enums.TipoPromocaoEnum;
-import excecoes.Excecoes;
+import exceptions.ExceptionDesconto;
+
 
 public class Program {
 
@@ -42,11 +43,16 @@ public class Program {
 
 		for (DetalhePromocao detalhePromocao2 : list) {
 			System.out.println(detalhePromocao2);
-			System.out.println("===================================");
+			System.out.println("================================================================");
 		}
 		}
 		catch(NullPointerException e) {
 			System.out.println("A variavel nao pode ser nula");
+		}
+		catch (ExceptionDesconto e) {
+			// TODO: handle exception
+			
+			System.out.println(e.getMessage());
 		}
 		
 

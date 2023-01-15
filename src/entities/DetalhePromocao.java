@@ -4,6 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import entities.enums.TipoPromocaoEnum;
+import exceptions.ExceptionDesconto;
 
 public class DetalhePromocao {
 
@@ -12,7 +13,7 @@ public class DetalhePromocao {
 	private Livro livro;
 	private TipoPromocaoEnum tipo;
 	private Double pctPromocao;
-	
+
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
 	public DetalhePromocao() {
@@ -70,18 +71,22 @@ public class DetalhePromocao {
 	public double desconto(TipoPromocaoEnum tipoPromocao, Livro livro, double desconto) {
 
 		double sum = 0;
+		if (tipoPromocao.valorTipoPromocao != 1 && tipoPromocao.valorTipoPromocao != 2
+				&& tipoPromocao.valorTipoPromocao != 3) {
+			throw new ExceptionDesconto("Tipo de promoçao inavalida!");
+		} else {
 
-		if (tipoPromocao.valorTipoPromocao == 2) {
+			if (tipoPromocao.valorTipoPromocao == 2) {
 
-			sum = livro.getPreco() - livro.getPreco() * desconto;
+				sum = livro.getPreco() - livro.getPreco() * desconto;
 
-		}else if(tipoPromocao.valorTipoPromocao == 1){
-			sum = livro.getPreco() - livro.getPreco() * desconto;
+			} else if (tipoPromocao.valorTipoPromocao == 1) {
+				sum = livro.getPreco() - livro.getPreco() * desconto;
 
-			
-		}else if(tipoPromocao.valorTipoPromocao == 3) {
-			sum = livro.getPreco() - livro.getPreco() * desconto;
-			
+			} else if (tipoPromocao.valorTipoPromocao == 3) {
+				sum = livro.getPreco() - livro.getPreco() * desconto;
+
+			}
 		}
 
 		return sum;
@@ -94,7 +99,7 @@ public class DetalhePromocao {
 		sb.append("Livro: " + livro.getNome());
 		sb.append("\nAutor: " + livro.getAutor());
 		sb.append("\nPreço original: " + livro.getPreco());
-		sb.append("\nPreço final: "+ desconto (tipo, livro, pctPromocao));
+		sb.append("\nPreço final: " + desconto(tipo, livro, pctPromocao));
 		sb.append("\nPorcentagem Aplicada " + pctPromocao);
 		sb.append("\nData inicio: " + sdf.format(inicio));
 		sb.append("\nData fim: " + sdf.format(fim));

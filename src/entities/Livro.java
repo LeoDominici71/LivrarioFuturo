@@ -1,6 +1,5 @@
 package entities;
 
-
 public class Livro {
 
 	private String nome;
@@ -45,8 +44,5 @@ public class Livro {
 	public String toString() {
 		return "Livro [nome=" + nome + ", autor=" + autor + ", preco=" + preco + "]";
 	}
-	
-	
-	
-}
 
+}

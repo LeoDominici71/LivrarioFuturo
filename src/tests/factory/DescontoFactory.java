@@ -15,10 +15,9 @@ public class DescontoFactory {
 	public static final int PctDescontoA = 5;
 	public static final int PctDescontoB = 10;
 	public static final int PctDescontoC = 15;
-	
+
 	public static Livro createEmptyLivro(double price) {
 		return new Livro("X", "X", price);
 	}
-	
-	
+
 }

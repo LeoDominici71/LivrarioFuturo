@@ -15,7 +15,6 @@ public class DetalhePromocao {
 	private Integer pctPromocao;
 
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-	
 
 	public DetalhePromocao() {
 		// TODO Auto-generated constructor stub
@@ -68,7 +67,6 @@ public class DetalhePromocao {
 	public void setPctPromocao(Integer pctPromocao) {
 		this.pctPromocao = pctPromocao;
 	}
-	
 
 	public double desconto(TipoPromocaoEnum tipoPromocao, Livro livro, Integer desconto) {
 
@@ -80,13 +78,13 @@ public class DetalhePromocao {
 
 			if (tipoPromocao.valorTipoPromocao == 2) {
 
-				sum = livro.getPreco() - livro.getPreco() * desconto/100;
+				sum = livro.getPreco() - livro.getPreco() * desconto / 100;
 
 			} else if (tipoPromocao.valorTipoPromocao == 1) {
-				sum = livro.getPreco() - livro.getPreco() * desconto/100;
+				sum = livro.getPreco() - livro.getPreco() * desconto / 100;
 
 			} else if (tipoPromocao.valorTipoPromocao == 3) {
-				sum = livro.getPreco() - livro.getPreco() * desconto/100;
+				sum = livro.getPreco() - livro.getPreco() * desconto / 100;
 
 			}
 		}
@@ -102,7 +100,7 @@ public class DetalhePromocao {
 		sb.append("\nAutor: " + livro.getAutor());
 		sb.append("\nPreço original: " + livro.getPreco());
 		sb.append("\nPreço final: " + desconto(tipo, livro, pctPromocao));
-		sb.append("\nPorcentagem Aplicada:" + pctPromocao +"%" );
+		sb.append("\nPorcentagem Aplicada:" + pctPromocao + "%");
 		sb.append("\nData inicio: " + sdf.format(inicio));
 		sb.append("\nData fim: " + sdf.format(fim));
 

@@ -12,15 +12,16 @@ public class DetalhePromocao {
 	private Date fim;
 	private Livro livro;
 	private TipoPromocaoEnum tipo;
-	private Double pctPromocao;
+	private Integer pctPromocao;
 
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	
 
 	public DetalhePromocao() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public DetalhePromocao(Date inicio, Date fim, Livro livro, TipoPromocaoEnum tipo, Double pctPromocao) {
+	public DetalhePromocao(Date inicio, Date fim, Livro livro, TipoPromocaoEnum tipo, Integer pctPromocao) {
 		this.inicio = inicio;
 		this.fim = fim;
 		this.livro = livro;
@@ -60,15 +61,16 @@ public class DetalhePromocao {
 		this.tipo = tipo;
 	}
 
-	public Double getPctPromocao() {
+	public Integer getPctPromocao() {
 		return pctPromocao;
 	}
 
-	public void setPctPromocao(Double pctPromocao) {
+	public void setPctPromocao(Integer pctPromocao) {
 		this.pctPromocao = pctPromocao;
 	}
+	
 
-	public double desconto(TipoPromocaoEnum tipoPromocao, Livro livro, double desconto) {
+	public double desconto(TipoPromocaoEnum tipoPromocao, Livro livro, Integer desconto) {
 
 		double sum = 0;
 		if (tipoPromocao.valorTipoPromocao != 1 && tipoPromocao.valorTipoPromocao != 2
@@ -78,13 +80,13 @@ public class DetalhePromocao {
 
 			if (tipoPromocao.valorTipoPromocao == 2) {
 
-				sum = livro.getPreco() - livro.getPreco() * desconto;
+				sum = livro.getPreco() - livro.getPreco() * desconto/100;
 
 			} else if (tipoPromocao.valorTipoPromocao == 1) {
-				sum = livro.getPreco() - livro.getPreco() * desconto;
+				sum = livro.getPreco() - livro.getPreco() * desconto/100;
 
 			} else if (tipoPromocao.valorTipoPromocao == 3) {
-				sum = livro.getPreco() - livro.getPreco() * desconto;
+				sum = livro.getPreco() - livro.getPreco() * desconto/100;
 
 			}
 		}
@@ -100,7 +102,7 @@ public class DetalhePromocao {
 		sb.append("\nAutor: " + livro.getAutor());
 		sb.append("\nPreço original: " + livro.getPreco());
 		sb.append("\nPreço final: " + desconto(tipo, livro, pctPromocao));
-		sb.append("\nPorcentagem Aplicada " + pctPromocao);
+		sb.append("\nPorcentagem Aplicada:" + pctPromocao +"%" );
 		sb.append("\nData inicio: " + sdf.format(inicio));
 		sb.append("\nData fim: " + sdf.format(fim));
 

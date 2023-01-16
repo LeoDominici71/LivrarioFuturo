@@ -19,7 +19,9 @@ public class Program {
 
 		// inserindo dados da livraria
 		try {
-
+			
+			
+		//seed para livro
 		Livro livro = new Livro("Malala, a menina que queria ir para a escola", "Adriana Carranca", 21.9);
 		Livro livro1 = new Livro("A revolução dos bichos: Um conto de fadas", "George Orwell", 8.5);
 		Livro livro2 = new Livro("Amoras", "Emicida", 19.9);
@@ -32,14 +34,15 @@ public class Program {
 		DetalhePromocao detalhePromocao = new DetalhePromocao();		
 		// inserindo dados da promocao
 		List<DetalhePromocao> list = new ArrayList<>();
-		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/20"), livro,TipoPromocaoEnum.valueOf("B"), 0.10));
-		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/15"), livro1,TipoPromocaoEnum.valueOf("A"),0.05));
-		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/20"), livro2, TipoPromocaoEnum.valueOf("B"),0.10));
-		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/15"), livro3, TipoPromocaoEnum.valueOf("A"),0.05));
-		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/15"), livro4,TipoPromocaoEnum.valueOf("A"),0.05));
-		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/30"), livro5,TipoPromocaoEnum.valueOf("C"),0.15));
-		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/15"), livro6, TipoPromocaoEnum.valueOf("A"),0.05));
-		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/30"), livro7, TipoPromocaoEnum.valueOf("C"), 0.15));
+		//seed para promocao
+		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/20"), livro,TipoPromocaoEnum.valueOf("B"), 10));
+		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/15"), livro1,TipoPromocaoEnum.valueOf("A"),5));
+		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/20"), livro2, TipoPromocaoEnum.valueOf("B"),10));
+		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/15"), livro3, TipoPromocaoEnum.valueOf("A"),5));
+		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/15"), livro4,TipoPromocaoEnum.valueOf("A"),5));
+		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/30"), livro5,TipoPromocaoEnum.valueOf("C"),15));
+		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/15"), livro6, TipoPromocaoEnum.valueOf("A"),5));
+		list.add(new DetalhePromocao(new Date("2023/01/10"), new Date("2023/01/30"), livro7, TipoPromocaoEnum.valueOf("C"), 15));
 
 		for (DetalhePromocao detalhePromocao2 : list) {
 			System.out.println(detalhePromocao2);
@@ -52,7 +55,7 @@ public class Program {
 		catch (ExceptionDesconto e) {
 			// TODO: handle exception
 			
-			System.out.println(e.getMessage());
+			System.out.println(e.getMessage() );
 		}
 		
 

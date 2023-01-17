@@ -19,14 +19,14 @@ public class Program {
 		try {
 
 			// seed para livro
-			Livro livro = new Livro("Malala, a menina que queria ir para a escola", "Adriana Carranca", 21.9);
-			Livro livro1 = new Livro("A revolução dos bichos: Um conto de fadas", "George Orwell", 8.5);
-			Livro livro2 = new Livro("Amoras", "Emicida", 19.9);
-			Livro livro3 = new Livro("Perigoso!", "Tim Warnes", 16.9);
-			Livro livro4 = new Livro("O morro dos ventos uivantes", "Emily Brontë", 12.9);
-			Livro livro5 = new Livro("Maus", "Art Spiegelman", 34.9);
-			Livro livro6 = new Livro("Auto da compadecida", "Ariano Suassuna", 31.3);
-			Livro livro7 = new Livro("Extraordinário", "R.J Palacio", 35.9);
+			Livro livro = new Livro("Malala, a menina que queria ir para a escola", "Adriana Carranca", 21.90);
+			Livro livro1 = new Livro("A revolução dos bichos: Um conto de fadas", "George Orwell", 8.50);
+			Livro livro2 = new Livro("Amoras", "Emicida", 19.90);
+			Livro livro3 = new Livro("Perigoso!", "Tim Warnes", 16.90);
+			Livro livro4 = new Livro("O morro dos ventos uivantes", "Emily Brontë", 12.90);
+			Livro livro5 = new Livro("Maus", "Art Spiegelman", 34.90);
+			Livro livro6 = new Livro("Auto da compadecida", "Ariano Suassuna", 31.30);
+			Livro livro7 = new Livro("Extraordinário", "R.J Palacio", 35.90);
 
 			DetalhePromocao detalhePromocao = new DetalhePromocao();
 			// inserindo dados da promocao
@@ -56,8 +56,6 @@ public class Program {
 		} catch (NullPointerException e) {
 			System.out.println("A variavel nao pode ser nula");
 		} catch (ExceptionDesconto e) {
-			// TODO: handle exception
-
 			System.out.println(e.getMessage());
 		}
 

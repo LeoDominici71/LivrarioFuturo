@@ -99,7 +99,7 @@ public class DetalhePromocao {
 		sb.append("Livro: " + livro.getNome());
 		sb.append("\nAutor: " + livro.getAutor());
 		sb.append("\nPreço original: " + livro.getPreco());
-		sb.append("\nPreço final: " + desconto(tipo, livro, pctPromocao));
+		sb.append("\nPreço final: " + String.format("%.1f",desconto(tipo, livro, pctPromocao)));
 		sb.append("\nPorcentagem Aplicada:" + pctPromocao + "%");
 		sb.append("\nData inicio: " + sdf.format(inicio));
 		sb.append("\nData fim: " + sdf.format(fim));
